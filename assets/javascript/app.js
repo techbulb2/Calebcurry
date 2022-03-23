@@ -1,25 +1,9 @@
 {
-    let grades = [
-        [12, 152, 35, 25, 63, 24], 
-        [23, 42, 13, 215, 54, 63], 
-        [46, 12, 53, 2135, 34, 3],
-        [3, 454, 86, 725, 79, 24],
-        [12, 6, 56, 23, 23, 24]
-    ];
+    let before = new Date(2020, 10,15)
+    let after = new Date(2020, 10, 20)
 
-    // for (let i = 0; i < grades.length; i++){
+    let oneDay = 1000 * 60 * 60 *24
 
-    //     for(let k = 0; k < grades[i].length; k++){
-    //         console.log(grades[i][k])
-    //     }
-
-    //     console.log("-----------------")
-    // }
-
-    grades.forEach(function(row){
-        row.forEach(function(col){
-            console.log(col)
-        })
-        console.log("~~~~~~~~~~~~~~~~")
-    })
+    let days = (after - before) / oneDay
+    console.log(days)
 }
