@@ -1,33 +1,25 @@
 {
-    let grades = [12, 34, 52, 45, 35, 356, 98, 84, 783, 29];
-    grades.length = 30;
-    grades[34] = 40;
+    let grades = [
+        [12, 152, 35, 25, 63, 24], 
+        [23, 42, 13, 215, 54, 63], 
+        [46, 12, 53, 2135, 34, 3],
+        [3, 454, 86, 725, 79, 24],
+        [12, 6, 56, 23, 23, 24]
+    ];
 
-    let count = 0;
-    let total = 0;
+    // for (let i = 0; i < grades.length; i++){
 
-    console.log(grades);
+    //     for(let k = 0; k < grades[i].length; k++){
+    //         console.log(grades[i][k])
+    //     }
 
-    let largest = grades[0];
+    //     console.log("-----------------")
+    // }
 
-    for (let i = 0; i < grades.length; i++){
-        if (grades[i] !== undefined){
-            count++;
-            total += grades[i];
-        }
-
-        if (grades[i] > largest){
-            
-            largest = grades[i];
-        }
-
-
-    }
-
-
-    let avg = total / count;
-    console.log(avg);
-
-    console.log(largest)
-
+    grades.forEach(function(row){
+        row.forEach(function(col){
+            console.log(col)
+        })
+        console.log("~~~~~~~~~~~~~~~~")
+    })
 }
