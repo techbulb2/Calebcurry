@@ -1,9 +1,10 @@
 {
-    let before = new Date(2020, 10,15)
-    let after = new Date(2020, 10, 20)
-
-    let oneDay = 1000 * 60 * 60 *24
-
-    let days = (after - before) / oneDay
-    console.log(days)
+    let myFunc = function pow(x, y){
+        let total = 1;
+        for(let i = 0; i < y; i++){
+            total *= x;
+        }
+        return total;
+    }
+    console.log(myFunc(3,3));
 }
