@@ -1,27 +1,23 @@
 {
-    pow.calculated = {}
-    function pow(x, y){
-        let stringVersion = x + "^" + y;
-        console.log("string version: " + stringVersion)
-
-        if(stringVersion in pow.calculated){
-            console.log("found!")
-            return pow.calculated[stringVersion]
-        }
-
-        console.log("calculating")
+    function pow(x, y, ...extra){
+        console.log(this)
+        console.log(arguments)
+        console.log(extra)
         let total = 1;
-        for (let i = 0; i < y; i++){
+        for(let i = 0; i < y; i++){
             total *= x;
         }
-        // pow.calculated.push(total)
-        pow.calculated[stringVersion] = total;
-        console.log(pow.calculated)
         return total;
     }
+    function largest(x, ...extra){
+        let largest = x;
+        for (let i = 0; i < extra.length; i++){
+            if (extra[i] > largest){
+                largest = extra[i]
+            }
+        }
 
-    pow(3,3)
-    pow(3,3)
-    pow(4,3)
-    pow(6,3)
+        return largest;
+    }
+    console.log(pow(30, 3, 4, 6, 3, 45, 2000))
 }
