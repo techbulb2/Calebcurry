@@ -1,30 +1,10 @@
 {
-    let me = {
-        name: "caleb",
-        outputMe: function(){
-            console.log(this)
-            console.log(this.name)
-        }
-    }
+    //CALL AND APPLY
 
-    function outputMe(){
-        console.log(this)
-        // console.log(this.name)
-    }
-
-    function outputMeStrict(){
-        'use strict';
+    function doStuff (input, input2){
+        console.log(input, input2)
         console.log(this)
     }
-
-    function Person(){
-        // console.log(this)
-        this.name = "Caleb"
-        console.log(this)
-    }
-
-    me.outputMe()
-    outputMe()
-    outputMeStrict()
-    let person = new Person()
+    let args = [5, 10]
+    doStuff.apply("hello",[ 5, 10])
 }
