@@ -1,9 +1,17 @@
 {
-    function cube(x){
-        return x*x*x;
+    let arrow = () => this;
+    function normal(){
+        return this;
     }
-    let cubeArrow = x => x*x*x;
 
-    console.log(cube(5))
-    console.log(cubeArrow(5))
+    console.log(arrow())
+    console.log(normal())
+
+    let functions = {
+        arrow: arrow,
+        normal: normal
+    }
+
+    console.log(functions.arrow())
+    console.log(functions.normal())
 }
