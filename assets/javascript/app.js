@@ -1,12 +1,9 @@
 {
-    //CALL AND APPLY
-
-    function doStuff (input, input2){
-        console.log(input, input2)
-        console.log(this)
+    function cube(x){
+        return x*x*x;
     }
+    let cubeArrow = x => x*x*x;
 
-    let me = {name: "caleb"}
-    let newFunction = doStuff.bind(me, 5, 10)
-    newFunction()
+    console.log(cube(5))
+    console.log(cubeArrow(5))
 }
