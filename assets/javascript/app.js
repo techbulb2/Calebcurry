@@ -1,17 +1,11 @@
 {
-    let arrow = () => this;
     function normal(){
         return this;
     }
 
-    console.log(arrow())
-    console.log(normal())
+    let arrow = () => this;
+    let newFunc = arrow.bind("hello")
+    console.log(newFunc())
 
-    let functions = {
-        arrow: arrow,
-        normal: normal
-    }
-
-    console.log(functions.arrow())
-    console.log(functions.normal())
+    console.log(normal.bind("this")())
 }
