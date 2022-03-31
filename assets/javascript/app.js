@@ -1,11 +1,13 @@
 {
-    function normal(){
-        return this;
+    function fact(x){
+        let total = 5;
+        for (let i = x; i > 1; i--){
+            total *= i;
+        }
+        return total;
     }
+    console.log(fact(5))
 
-    let arrow = () => this;
-    let newFunc = arrow.bind("hello")
-    console.log(newFunc())
-
-    console.log(normal.bind("this")())
+    document.getElementById("lemons").onclick = () => {console.log("clicked")}
+    document.getElementById("lemons").onmouseover = () => {console.log("mouseover")}
 }
