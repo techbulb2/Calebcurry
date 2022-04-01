@@ -1,16 +1,21 @@
 {
-    function dosomething(){
-        throw {
-            error: "broke", code: -1
-        }
+    function User (name, interests){
+        this.name = name;
+        this.interests = interests;
     }
 
-    try {
-        dosomething();
-    }catch (e){
-        console.log(e)
-        console.log("Error")
-    }finally {
-        console.log("wrapping things up...")
+    function newUser(name, interests){
+        let person = {
+            name: name,
+            interests: interests
+        }
+
+        return person;
     }
+    let me = new User("caleb", ["cooking", "eating", "exercise"]);
+    let you = newUser("camila", ["hotwheels"])
+
+    console.log(me, you)
+    me.membership = "Gold"
+    console.log (me)
 }
