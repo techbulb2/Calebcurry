@@ -1,13 +1,16 @@
 {
-    function fact(x){
-        let total = 5;
-        for (let i = x; i > 1; i--){
-            total *= i;
+    function dosomething(){
+        throw {
+            error: "broke", code: -1
         }
-        return total;
     }
-    console.log(fact(5))
 
-    document.getElementById("lemons").onclick = () => {console.log("clicked")}
-    document.getElementById("lemons").onmouseover = () => {console.log("mouseover")}
+    try {
+        dosomething();
+    }catch (e){
+        console.log(e)
+        console.log("Error")
+    }finally {
+        console.log("wrapping things up...")
+    }
 }
