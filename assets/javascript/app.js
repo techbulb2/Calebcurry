@@ -3,19 +3,16 @@
         this.name = name;
         this.interests = interests;
     }
+    User.prototype.greet = function(){
+        console.log("my name is " + this.name, this.interests)
+    }   
+   
 
-    function newUser(name, interests){
-        let person = {
-            name: name,
-            interests: interests
-        }
-
-        return person;
-    }
     let me = new User("caleb", ["cooking", "eating", "exercise"]);
-    let you = newUser("camila", ["hotwheels"])
+    let you = new User("camila", ["hotwheels"])
 
     console.log(me, you)
-    me.membership = "Gold"
-    console.log (me)
+
+    me.greet();
+    you.greet();
 }
