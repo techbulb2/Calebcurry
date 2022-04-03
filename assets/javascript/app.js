@@ -1,14 +1,26 @@
 {
     let user = {
-        active: true
+        active: true,
+        sayHello: function(){
+            return this.name + " says hi"
+        }
     }
 
     let student = {
-        major: "english"
+        major: "english",
+        name: "Peasant student"
     }
 
     let teacher = {
-        teaching: ["math", "science"]
+        teaching: ["math", "science"],
+        name: "caleb curry",
+        sayHello: function(){
+            let message = this.name + " teaches "
+            this.teaching.forEach(function(e){
+                message += e + " ";
+            })
+            return message;
+        }
     }
 
     Object.setPrototypeOf(student, user)
@@ -17,6 +29,10 @@
 
     student.active = false;
 
-    console.log("teacher", teacher.active)
-    console.log("student", student.active)
+    let newMembers = [teacher, student]
+
+    newMembers.forEach(function(e){
+        console.log(e.sayHello())
+    })
+
 }
