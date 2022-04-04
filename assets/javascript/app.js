@@ -35,4 +35,10 @@
         console.log(e.sayHello())
     })
 
+    console.log("Name in teacher", teacher.hasOwnProperty("name"))
+
+    console.log("Name in teacher", teacher.name === undefined)
+
+    console.log(teacher)
+
 }
