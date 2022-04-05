@@ -1,44 +1,45 @@
 {
-    let user = {
-        active: true,
-        sayHello: function(){
-            return this.name + " says hi"
+    function User(){
+        this.active = false;
+    }
+
+    User.prototype.sayHello = function(){
+        return this.name + " says hi";
+    }
+
+    function Student(name, major){
+        this.name = name;
+        this.major = major;
+    }
+    Student.prototype = new User()
+    function Teacher(name, teaching){
+        this.name = name
+        this.teaching = teaching
+    }
+    Teacher.prototype = new User()
+    Teacher.prototype.sayHello = function(){
+        return "Teacher says hello"
+    }
+    let student = new Student("Peasant student", "English")
+
+    let teacher = new Teacher("caleb curry",  ["math", "science"])
+
+    console.log(student, teacher)
+
+    console.log(teacher instanceof Teacher)
+    console.log(teacher instanceof User)
+
+    if(Teacher instanceof Student){
+        console.log("yup")
+    }else {
+        console.log("nope")
+    }
+
+    function doSomething(user){
+        if (user instanceof User){
+            return 5;
         }
+        return -1;
     }
-
-    let student = {
-        major: "english",
-        name: "Peasant student"
-    }
-
-    let teacher = {
-        teaching: ["math", "science"],
-        name: "caleb curry",
-        sayHello: function(){
-            let message = this.name + " teaches "
-            this.teaching.forEach(function(e){
-                message += e + " ";
-            })
-            return message;
-        }
-    }
-
-    Object.setPrototypeOf(student, user)
-
-    Object.setPrototypeOf(teacher, user)
-
-    student.active = false;
-
-    let newMembers = [teacher, student]
-
-    newMembers.forEach(function(e){
-        console.log(e.sayHello())
-    })
-
-    console.log("Name in teacher", teacher.hasOwnProperty("name"))
-
-    console.log("Name in teacher", teacher.name === undefined)
-
-    console.log(teacher)
-
+    console.log(doSomething("teacher"))
 }
