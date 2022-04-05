@@ -1,0 +1,18 @@
+/* body {
+    background-color: red;
+
+} */
+
+/* button {
+    background-color: blue;
+    color: red;
+    border: yellow dotted;
+} */
+
+.border {
+    border: 2px solid orange;
+}
+
+#special {
+    color: green;
+}
